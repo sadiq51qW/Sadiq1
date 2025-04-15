@@ -1,0 +1,1878 @@
+/* تنسيق كتل الأكواد البرمجية وأزرار النسخ والتنزيل */
+.code-block-container {
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    direction: ltr;
+    text-align: left;
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #3e3e3e;
+}
+
+.code-language {
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+
+.code-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.copy-code-btn, .download-code-btn {
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.copy-code-btn:hover, .download-code-btn:hover {
+    background-color: #3e3e3e;
+    color: #ffffff;
+}
+
+.copy-code-btn.success, .download-code-btn.success {
+    color: #4caf50;
+}
+
+.code-block {
+    margin: 0;
+    padding: 12px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    background-color: #1e1e1e;
+}
+
+.code-block code {
+    display: block;
+    white-space: pre;
+}
+
+/* تنسيق الأكواد المضمنة */
+.inline-code {
+    font-family: 'Courier New', monospace;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+/* تنسيق الروابط */
+.message a {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.message a:hover {
+    color: #2a75f3;
+    text-decoration: underline;
+}
+
+/* تحسين مظهر الرسائل */
+.message {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    max-width: 85%;
+    line-height: 1.5;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message p {
+    margin: 0 0 8px 0;
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #f5f5f5;
+    color: #333;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+/* تحسين مظهر مؤشر الكتابة */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* تحسين مظهر حقل الإدخال */
+.chat-input {
+    padding: 12px;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0 0 12px 12px;
+}
+
+.chat-input form {
+    display: flex;
+    align-items: center;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.chat-input button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #2a75f3;
+}
+
+.chat-input button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+/* تحسين مظهر شريط التحميل */
+.loading-bar {
+    height: 3px;
+    background-color: #4285f4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+.loading-bar.active {
+    animation: loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 70%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* تحسين مظهر العنوان */
+header {
+    padding: 16px;
+    background-color: #4285f4;
+    color: white;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* تحسين مظهر حاوية المحادثة */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* تحسين مظهر الحاوية الرئيسية */
+.container {
+    max-width: 800px;
+    height: 80vh;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        max-width: 100%;
+        border-radius: 0;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+    
+    .code-block {
+        font-size: 0.8rem;
+    }
+    
+    .chat-input input {
+        font-size: 0.9rem;
+    }
+}
+
+/* تحسين مظهر الوضع المظلم */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #1e1e1e;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    header {
+        background-color: #2a75f3;
+    }
+    
+    .chat-container {
+        background-color: #1e1e1e;
+    }
+    
+    .user-message {
+        background-color: #0d47a1;
+        color: #e0e0e0;
+    }
+    
+    .bot-message {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    .typing-indicator {
+        background-color: #2d2d2d;
+    }
+    
+    .chat-input {
+        background-color: #1e1e1e;
+        border-top: 1px solid #333;
+    }
+    
+    .chat-input input {
+        background-color: #2d2d2d;
+        border-color: #333;
+        color: #e0e0e0;
+    }
+    
+    .chat-input input:focus {
+        border-color: #4285f4;
+    }
+    
+    .inline-code {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ff79c6;
+    }
+}
+
+/* تحسين مظهر شعار Gemini */
+.gemini-logo {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gemini-logo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-color: #4285f4;
+    border-radius: 50%;
+}
+
+/* تأثيرات الظهور */
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسين مظهر وقت الرسالة */
+.message-time {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+}
+
+.bot-message .message-time {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* تحسين مظهر رسالة الخطأ */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 3px solid #c62828;
+}
+
+@media (prefers-color-scheme: dark) {
+    .error-message {
+        background-color: #3e2121;
+        color: #ff5252;
+        border-left: 3px solid #ff5252;
+    }
+}
+
+/* تحسين مظهر لوحة المفاتيح على الأجهزة المحمولة */
+body.keyboard-open .chat-container {
+    height: calc(100% - 60px - 40vh);
+}
+
+/* تحسين مظهر التمرير */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+/* تحسينات متقدمة للتصميم */
+:root {
+    --primary-color: #4285f4;
+    --primary-dark: #2a75f3;
+    --secondary-color: #34a853;
+    --accent-color: #ea4335;
+    --light-bg: #f8f9fa;
+    --dark-bg: #1e1e1e;
+    --dark-secondary: #2d2d2d;
+    --text-light: #e0e0e0;
+    --text-dark: #333333;
+    --border-radius: 12px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* تحسين المظهر العام */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 95%;
+    height: 85vh;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+}
+
+/* تحسين العنوان */
+header {
+    padding: 16px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    text-align: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(30deg);
+}
+
+/* تحسين حاوية المحادثة */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0f0f0' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 300px;
+}
+
+/* تحسين مظهر الرسائل */
+.message {
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    margin-bottom: 12px;
+    max-width: 85%;
+    line-height: 1.5;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.message:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.user-message {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #0d47a1;
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
+.bot-message {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    color: var(--text-dark);
+    align-self: flex-start;
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+}
+
+.message p {
+    margin: 0 0 8px 0;
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+}
+
+/* تحسين مظهر مؤشر الكتابة */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    border-radius: var(--border-radius);
+    border-bottom-left-radius: 0;
+    margin-bottom: 12px;
+    width: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* تحسين مظهر حقل الإدخال */
+.chat-input {
+    padding: 12px;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    transition: var(--transition);
+}
+
+.chat-input form {
+    display: flex;
+    align-items: center;
+}
+
+.chat-input-container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 24px;
+    padding: 0 8px;
+    transition: var(--transition);
+}
+
+.chat-input-container:focus-within {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 24px;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.file-upload-btn {
+    background: none;
+    border: none;
+    color: #757575;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.file-upload-btn:hover {
+    color: var(--primary-color);
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+.send-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.send-btn:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.send-btn:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+/* تحسين مظهر شريط التحميل */
+.loading-bar {
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background-size: 200% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.loading-bar.active {
+    opacity: 1;
+    animation: loading 2s infinite ease-in-out, gradient 2s infinite linear;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* تحسين مظهر شعار Gemini */
+.gemini-logo {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gemini-logo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 50%;
+}
+
+/* تأثيرات الظهور */
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسين مظهر وقت الرسالة */
+.message-time {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+}
+
+.bot-message .message-time {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* تحسين مظهر رسالة الخطأ */
+.error-message {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    color: #c62828;
+    border-left: 3px solid #c62828;
+}
+
+/* تحسين مظهر التمرير */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* تحسين مظهر الوضع المظلم */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+        color: var(--text-light);
+    }
+    
+    .container {
+        background-color: var(--dark-bg);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    header {
+        background: linear-gradient(90deg, #1a237e, #283593);
+    }
+    
+    .chat-container {
+        background-color: var(--dark-bg);
+    }
+    
+    .chat-messages {
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23333333' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+    
+    .user-message {
+        background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+        color: #e0e0e0;
+    }
+    
+    .bot-message {
+        background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+        color: #e0e0e0;
+    }
+    
+    .typing-indicator {
+        background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+    }
+    
+    .chat-input {
+        background-color: var(--dark-bg);
+        border-top: 1px solid #333;
+    }
+    
+    .chat-input-container {
+        background-color: #333;
+    }
+    
+    .chat-input-container:focus-within {
+        background-color: #444;
+    }
+    
+    .chat-input input {
+        color: #e0e0e0;
+    }
+    
+    .file-upload-btn {
+        color: #aaa;
+    }
+    
+    .file-upload-btn:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .error-message {
+        background: linear-gradient(135deg, #3e2121 0%, #5a2d2d 100%);
+        color: #ff5252;
+        border-left: 3px solid #ff5252;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .message-time {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    header {
+        border-radius: 0;
+        padding: 12px;
+    }
+    
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .chat-container {
+        border-radius: 0;
+    }
+    
+    .message {
+        max-width: 90%;
+        padding: 10px 14px;
+    }
+    
+    .chat-input {
+        border-radius: 0;
+    }
+    
+    .chat-input input {
+        font-size: 0.95rem;
+    }
+    
+    .send-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* تحسينات للهواتف الصغيرة */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .message {
+        max-width: 95%;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .chat-input {
+        padding: 8px;
+    }
+    
+    .chat-input input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .send-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* تنسيق عرض الصور والملفات */
+.message-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.message-image:hover {
+    transform: scale(1.02);
+}
+
+.message-file {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.message-file:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.message-file i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.message-file-info {
+    flex: 1;
+}
+
+.message-file-name {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.message-file-size {
+    font-size: 0.8rem;
+    color: #757575;
+}
+
+.message-file-download {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.message-file-download:hover {
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+/* تنسيق مؤشر التحميل للملفات */
+.file-upload-progress {
+    width: 100%;
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.file-upload-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* تنسيق معاينة الصور */
+.image-preview-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.image-preview-container.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-preview {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-preview-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.image-preview-close:hover {
+    transform: scale(1.1);
+}
+
+/* تنسيق قائمة الملفات المرفقة */
+.attached-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.attached-file {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+}
+
+.attached-file-name {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.attached-file-remove {
+    background: none;
+    border: none;
+    color: #757575;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 0 5px;
+    transition: var(--transition);
+}
+
+.attached-file-remove:hover {
+    color: var(--accent-color);
+}
+
+/* تنسيق مؤشر السحب والإفلات */
+.drop-zone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(66, 133, 244, 0.1);
+    border: 3px dashed var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.drop-zone.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drop-zone-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* تنسيق الوضع المظلم للملفات */
+@media (prefers-color-scheme: dark) {
+    .message-file {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .message-file:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    .message-file-size {
+        color: #aaa;
+    }
+    
+    .file-upload-progress {
+        background-color: #444;
+    }
+    
+    .attached-file {
+        background-color: #333;
+        color: #e0e0e0;
+    }
+    
+    .drop-zone {
+        background-color: rgba(66, 133, 244, 0.2);
+    }
+    
+    .drop-zone-text {
+        background-color: var(--dark-bg);
+        color: var(--primary-color);
+    }
+}
+/* تحسين ظهور مربع الكتابة على الهواتف المحمولة */
+@media (max-width: 768px) {
+    /* تثبيت مربع الكتابة في أسفل الشاشة */
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+    }
+    
+    .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding-bottom: 70px; /* إضافة مساحة في الأسفل لتجنب تداخل المحتوى مع مربع الكتابة */
+        max-height: calc(100vh - 120px);
+    }
+    
+    .chat-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 8px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+    
+    /* تعديل الحاوية الرئيسية */
+    .container {
+        padding-bottom: 0;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
+    /* تحسين مظهر الوضع المظلم */
+    @media (prefers-color-scheme: dark) {
+        .chat-input {
+            background-color: #1e1e1e;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+    }
+    
+    /* تحسين التمرير */
+    body {
+        overflow: hidden;
+    }
+}
+
+/* تحسينات إضافية للهواتف الصغيرة */
+@media (max-width: 480px) {
+    .chat-messages {
+        padding-bottom: 60px;
+    }
+    
+    .chat-input {
+        padding: 6px;
+    }
+}
+/* Base64 encoded SVG for Gemini logo */
+.gemini-logo {
+  width: 32px;
+  height: 32px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzQyODVmNCIgZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptLTEgMTVjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTF2LTVjMC0uNTUyLjQ0OC0xIDEtMXMxIC40NDggMSAxdjV6bTQgMGMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMXYtNWMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDF2NXptLTIgM2MtLjU1MiAwLTEtLjQ0OC0xLTFzLjQ0OC0xIDEtMSAxIC40NDggMSAxLS40NDggMS0xIDF6Ii8+PC9zdmc+');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/* Favicon replacement */
+.favicon {
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzQyODVmNCIgZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptLTEgMTVjMCAuNTUyLS40NDggMS0xIDFzLTEtLjQ0OC0xLTF2LTVjMC0uNTUyLjQ0OC0xIDEtMXMxIC40NDggMSAxdjV6bTQgMGMwIC41NTItLjQ0OCAxLTEgMXMtMS0uNDQ4LTEtMXYtNWMwLS41NTIuNDQ4LTEgMS0xczEgLjQ0OCAxIDF2NXptLTIgM2MtLjU1MiAwLTEtLjQ0OC0xLTFzLjQ0OC0xIDEtMSAxIC40NDggMSAxLS40NDggMS0xIDF6Ii8+PC9zdmc+');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* تحسينات إضافية للهواتف المحمولة */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        max-width: 100%;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        padding: 10px;
+        border-radius: 0;
+    }
+    
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .gemini-logo {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .chat-messages {
+        padding: 10px;
+    }
+    
+    .message {
+        max-width: 95%;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .code-block-container {
+        margin: 10px 0;
+    }
+    
+    .code-block-header {
+        padding: 6px 8px;
+    }
+    
+    .code-language {
+        font-size: 0.75rem;
+    }
+    
+    .code-actions button {
+        padding: 3px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .code-block {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    
+    .chat-input {
+        padding: 8px;
+    }
+    
+    .chat-input input {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .chat-input button {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .inline-code {
+        font-size: 0.8em;
+    }
+    
+    .message-time {
+        font-size: 0.65rem;
+    }
+}
+
+/* تحسينات إضافية للهواتف الصغيرة */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.1rem;
+    }
+    
+    .gemini-logo {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+    }
+    
+    .message {
+        max-width: 98%;
+        padding: 6px 10px;
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+    }
+    
+    .code-block {
+        font-size: 0.75rem;
+    }
+    
+    .chat-input input {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .chat-input button {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* تحسين عرض الكود على الهواتف */
+@media (max-width: 768px) {
+    .code-block-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    
+    .code-block pre {
+        white-space: pre;
+        overflow-x: auto;
+    }
+}
+/* إضافة تحسينات إضافية للأجهزة المحمولة */
+
+/* تحسين التفاعل مع لوحة المفاتيح على الأجهزة المحمولة */
+@media (max-width: 768px) {
+  .chat-input input {
+    font-size: 16px; /* منع تكبير النص تلقائياً على iOS */
+  }
+  
+  /* تحسين المساحة عند ظهور لوحة المفاتيح */
+  body.keyboard-open .chat-messages {
+    max-height: 40vh;
+  }
+  
+  /* تحسين أحجام الخطوط للشاشات الصغيرة */
+  .message {
+    font-size: 0.95rem;
+  }
+  
+  /* تحسين أزرار اللمس */
+  .chat-input button {
+    min-width: 44px; /* الحد الأدنى الموصى به لعناصر اللمس */
+    min-height: 44px;
+  }
+}
+
+/* تحسينات إضافية للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.1rem;
+  }
+  
+  .chat-container {
+    margin: 0.2rem;
+    border-radius: 0.3rem;
+  }
+  
+  /* تحسين تجربة اللمس */
+  .chat-input input {
+    padding: 0.7rem;
+  }
+}
+
+/* دعم الوضع المظلم */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #8ab4f8;
+    --secondary-color: #81c995;
+    --background-color: #202124;
+    --chat-bg: #303134;
+    --user-bubble: #394457;
+    --bot-bubble: #3c4043;
+    --text-color: #e8eaed;
+    --placeholder-color: #9aa0a6;
+    --border-color: #5f6368;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* تحسين الأداء على الأجهزة ذات الموارد المحدودة */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+  
+  .typing-indicator span {
+    animation: none;
+    opacity: 0.7;
+  }
+  
+  .loading-bar.active {
+    animation: none;
+    width: 100%;
+    opacity: 0.7;
+  }
+}
+
+/* تحسين التوافق مع أجهزة القراءة الشاشية */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* تحسين التفاعل باللمس */
+.message, .chat-input button {
+  touch-action: manipulation;
+}
+:root {
+  --primary-color: #4285f4;
+  --secondary-color: #34a853;
+  --background-color: #f8f9fa;
+  --chat-bg: #ffffff;
+  --user-bubble: #e6f2ff;
+  --bot-bubble: #f1f3f4;
+  --text-color: #202124;
+  --placeholder-color: #5f6368;
+  --border-color: #dadce0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --success-color: #34a853;
+  --error-color: #ea4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  direction: rtl;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 img {
+  height: 2rem;
+  margin-left: 0.5rem;
+}
+
+.chat-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--chat-bg);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  max-width: 80%;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+.user-message {
+  align-self: flex-start;
+  background-color: var(--user-bubble);
+  border-bottom-right-radius: 0.2rem;
+}
+
+.bot-message {
+  align-self: flex-end;
+  background-color: var(--bot-bubble);
+  border-bottom-left-radius: 0.2rem;
+}
+
+.message-time {
+  font-size: 0.7rem;
+  color: var(--placeholder-color);
+  margin-top: 0.3rem;
+  text-align: left;
+}
+
+.typing-indicator {
+  display: flex;
+  align-self: flex-end;
+  background-color: var(--bot-bubble);
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+.typing-indicator span {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin: 0 0.1rem;
+  background-color: var(--placeholder-color);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation: pulse 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation: pulse 1s infinite 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation: pulse 1s infinite 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.chat-input {
+  display: flex;
+  padding: 1rem;
+  background-color: var(--chat-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.chat-input form {
+  display: flex;
+  width: 100%;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.chat-input input:focus {
+  border-color: var(--primary-color);
+}
+
+.chat-input input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.chat-input button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+  background-color: #3367d6;
+}
+
+.chat-input button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+.chat-input button i {
+  font-size: 1.2rem;
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .message {
+    max-width: 90%;
+    padding: 0.7rem 0.9rem;
+  }
+  
+  .chat-input {
+    padding: 0.7rem;
+  }
+  
+  .chat-input input {
+    padding: 0.7rem;
+  }
+  
+  .chat-input button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* تحسينات للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+  header {
+    padding: 0.7rem;
+  }
+  
+  header h1 {
+    font-size: 1rem;
+  }
+  
+  header h1 img {
+    height: 1.5rem;
+  }
+  
+  .chat-container {
+    margin: 0.3rem;
+  }
+  
+  .chat-messages {
+    padding: 0.7rem;
+  }
+  
+  .message {
+    max-width: 95%;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .chat-input {
+    padding: 0.5rem;
+  }
+  
+  .chat-input input {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+  
+  .chat-input button {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+}
+
+/* تأثيرات إضافية */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تنسيق الرسائل الخاصة */
+.welcome-message {
+  text-align: center;
+  background-color: transparent;
+  color: var(--placeholder-color);
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+.error-message {
+  background-color: rgba(234, 67, 53, 0.1);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+/* تحسينات لتجربة المستخدم */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background-color: var(--placeholder-color);
+}
+
+/* تأثير التحميل */
+.loading-bar {
+  height: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+  z-index: 20;
+}
+
+.loading-bar.active {
+  animation: loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
